@@ -1,0 +1,37 @@
+﻿<Page x:Class="AdsApp.Pages.PartnerSalePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AdsApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="История реализации">
+
+    <Grid>
+        <ListView Name="ParSaleList" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="2" Margin="5" Width="750" Padding="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <TextBlock Name="txtProduct" HorizontalAlignment="Left" Text="{Binding Название}" FontSize="14"/>
+                                <TextBlock Name="txtProductCount" HorizontalAlignment="Left" Text="{Binding КоличествоПродукта, StringFormat=' {0} единиц'}" />
+                            </StackPanel>
+                            <TextBlock Name="txtDate" HorizontalAlignment="Right" Margin="0, 10, 0, 0" Grid.Column="1" Text="{Binding ДатаПродажи}" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

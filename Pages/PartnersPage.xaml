@@ -1,0 +1,45 @@
+﻿<Page x:Class="AdsApp.Pages.PartnersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AdsApp.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Партнёры">
+
+    <Grid>
+        <ListView Name="PartnersList" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="PartnersList_SelectionChanged">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="2" Margin="5" Width="735" Padding="5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Name="txtType" HorizontalAlignment="Left" Text="{Binding Тип}" />
+                                    <TextBlock Text="|" HorizontalAlignment="Left" Margin="10, 0, 10, 0" />
+                                    <TextBlock Name="txtName" HorizontalAlignment="Left" Text="{Binding Наименование}" />
+                                </StackPanel>
+                                
+                                <TextBlock Name="txtDir" HorizontalAlignment="Left" Text="{Binding Директор}" />
+                                <TextBlock Name="txtPhone" HorizontalAlignment="Left" Text="{Binding Телефон}" />
+                                <TextBlock Name="txtRate" HorizontalAlignment="Left" Text="{Binding Path=Рейтинг, StringFormat='Рейтинг: {0}'}"/>
+                            </StackPanel>
+                            <TextBlock Name="txtDiscount" HorizontalAlignment="Right" Margin="0,10,50,0" Grid.Column="1" Text="{Binding Path=Discount, StringFormat=' {0}%'}"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

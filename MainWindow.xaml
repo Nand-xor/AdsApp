@@ -1,0 +1,22 @@
+﻿<Window x:Class="AdsApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rau_121_UP02"
+        mc:Ignorable="d"
+        Title="Доска объявлений" Height="550" Width="800"
+        Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition />
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Source="Resources\Icon.jpg"  HorizontalAlignment="Left"  Margin="5"/>
+        <Frame Name="MainFrame" Grid.Row="1" Navigated="MainFrame_Navigated" NavigationUIVisibility="Hidden" Source="Pages/PartnersPage.xaml"/>
+        <Button Name="btnBack" Grid.Row="2" Content="Назад" HorizontalAlignment="Left" Margin="22,4,0,4" Click="btnBack_Click" Width="110" MaxWidth="120"/>
+        <Button Name="btnAdd" Grid.Row="2" Content="Добавить" Margin="0,4,26,4" Click="btnAdd_Click" Width="110" MaxWidth="120" HorizontalAlignment="Right"/>
+    </Grid>
+</Window>
